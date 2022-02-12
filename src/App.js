@@ -1,8 +1,9 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import { BrowserRouter, NavLink, Route, Routes } from "react-router-dom";
-import About from "./pages/About/About";
-import Articles from "./pages/Articles/Articles";
-import Home from "./pages/Home/Home";
+
+const About = lazy(() => import("./pages/About/About"));
+const Articles = lazy(() => import("./pages/Articles/Articles"));
+const Home = lazy(() => import("./pages/Home/Home"));
 
 const App = () => {
   return (
@@ -18,11 +19,13 @@ const App = () => {
           <NavLink to="/articles">Articles</NavLink>
         </li>
       </ul>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/articles" element={<Articles />} />
-      </Routes>
+      <Suspense fallback={<p>Loading Pages...</p>}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/articles" element={<Articles />} />
+        </Routes>
+      </Suspense>
     </BrowserRouter>
   );
 };
