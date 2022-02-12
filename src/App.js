@@ -6,24 +6,24 @@ import Home from "./pages/Home";
 
 const App = () => {
   return (
-    <>
-      <ul className="navbar">
+    <BrowserRouter>
+      <div className="navbar">
         <li>
-          <NavLink to="/">Home</NavLink>
+          <NavLink to="/">useState</NavLink>
         </li>
         <li>
-          <NavLink to="/about">About</NavLink>
+          <NavLink to="/about">useContext</NavLink>
         </li>
         <li>
           <NavLink to="/articles">Articles</NavLink>
         </li>
-      </ul>
+      </div>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/articles" element={<Articles />} />
       </Routes>
-    </>
+    </BrowserRouter>
   );
 };
 

@@ -54,3 +54,42 @@ section p {
   font-size: 1.1rem;
   line-height: 1.72em;
 }
+
+.home.wrapper input {
+  border: none;
+  padding: 12px 24px;
+  border-radius: 4px;
+  background-color: #d0d6e6;
+  color: #000;
+  font-size: 18px;
+  transition: all 0.25s ease-in;
+}
+
+.home.wrapper input:focus,
+.home.wrapper input:active {
+  border: none;
+  outline-color: #1f2937;
+}
+
+.home.wrapper .counter {
+  font-size: 3rem;
+  margin: 12px 0;
+}
+
+button {
+  border: none;
+  background-color: #1f2937;
+  color: #fff;
+  padding: 12px 28px;
+  margin-right: 12px;
+  border-radius: 4px;
+  transition: all 0.1s linear;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.15);
+}
+
+button:active {
+  background-color: #384961;
+  color: #fff;
+  box-shadow: none;
+  transform: scale(0.98);
+}
