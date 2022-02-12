@@ -1,6 +1,6 @@
 import React from "react";
 
-const Home = () => {
+const CountUseState = () => {
   const [counter, setCounter] = React.useState(0);
   const [delta, setDelta] = React.useState("");
 
@@ -38,4 +38,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default CountUseState;

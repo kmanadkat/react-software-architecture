@@ -26,7 +26,7 @@ const CounterDelta = () => {
   );
 };
 
-const About = () => {
+const CountContext = () => {
   return (
     <CounterProvider>
       <section className="wrapper home">
@@ -38,4 +38,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default CountContext;

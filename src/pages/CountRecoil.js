@@ -52,7 +52,7 @@ const CounterDelta = () => {
   );
 };
 
-const Articles = () => {
+const CountRecoil = () => {
   return (
     <RecoilRoot>
       <section className="wrapper home">
@@ -64,4 +64,4 @@ const Articles = () => {
   );
 };
 
-export default Articles;
+export default CountRecoil;

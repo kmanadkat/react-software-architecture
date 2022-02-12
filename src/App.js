@@ -1,8 +1,9 @@
 import React from "react";
 import { BrowserRouter, NavLink, Route, Routes } from "react-router-dom";
-import About from "./pages/About";
-import Articles from "./pages/Articles";
-import Home from "./pages/Home";
+import CountContext from "./pages/CountContext";
+import CountMobx from "./pages/CountMobx";
+import CountRecoil from "./pages/CountRecoil";
+import CountUseState from "./pages/CountUseState";
 
 const App = () => {
   return (
@@ -12,16 +13,20 @@ const App = () => {
           <NavLink to="/">useState</NavLink>
         </li>
         <li>
-          <NavLink to="/about">useContext</NavLink>
+          <NavLink to="/context">useContext</NavLink>
         </li>
         <li>
-          <NavLink to="/articles">Recoil</NavLink>
+          <NavLink to="/recoil">Recoil</NavLink>
+        </li>
+        <li>
+          <NavLink to="/mobx">Mobx</NavLink>
         </li>
       </div>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/articles" element={<Articles />} />
+        <Route path="/" element={<CountUseState />} />
+        <Route path="/context" element={<CountContext />} />
+        <Route path="/recoil" element={<CountRecoil />} />
+        <Route path="/mobx" element={<CountMobx />} />
       </Routes>
     </BrowserRouter>
   );
