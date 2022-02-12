@@ -1,9 +1,8 @@
-import React from 'react'
+import React from "react";
 
 const Header = () => {
-  return (
-    <h2>About</h2>
-  )
-}
+  throw new Error("Error From Header");
+  return <h2>About</h2>;
+};
 
-export default Header
+export default Header;
