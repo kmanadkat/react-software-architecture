@@ -1,9 +1,8 @@
 import React from "react";
 
-const About = () => {
+const Content = () => {
   return (
-    <section className="wrapper">
-      <h2>About</h2>
+    <>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum impedit
         quidem sunt voluptatem sequi vero consequatur sit eaque ducimus, minus
@@ -17,8 +16,17 @@ const About = () => {
         impedit soluta, debitis numquam cumque animi vitae ipsam iure excepturi
         nulla! Magnam rerum sed odit?
       </p>
-    </section>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis
+        laborum, eum et doloremque quisquam fugiat? Eos architecto fugit a,
+        facere laudantium cumque, neque fuga nostrum error obcaecati sed itaque
+        excepturi accusamus porro nobis exercitationem ad magni ea. Provident at
+        aut odit reprehenderit atque nulla similique fugiat voluptate eligendi
+        ipsam esse tempore, recusandae vero cum. Nisi sit quo cumque! Dolorum,
+        nemo.
+      </p>
+    </>
   );
 };
 
-export default About;
+export default Content;

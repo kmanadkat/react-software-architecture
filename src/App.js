@@ -1,12 +1,12 @@
 import React from "react";
 import { BrowserRouter, NavLink, Route, Routes } from "react-router-dom";
-import About from "./pages/About";
-import Articles from "./pages/Articles";
-import Home from "./pages/Home";
+import About from "./pages/About/About";
+import Articles from "./pages/Articles/Articles";
+import Home from "./pages/Home/Home";
 
 const App = () => {
   return (
-    <>
+    <BrowserRouter>
       <ul className="navbar">
         <li>
           <NavLink to="/">Home</NavLink>
@@ -23,7 +23,7 @@ const App = () => {
         <Route path="/about" element={<About />} />
         <Route path="/articles" element={<Articles />} />
       </Routes>
-    </>
+    </BrowserRouter>
   );
 };
 
