@@ -15,7 +15,7 @@ const App = () => {
           <NavLink to="/about">useContext</NavLink>
         </li>
         <li>
-          <NavLink to="/articles">Articles</NavLink>
+          <NavLink to="/articles">Recoil</NavLink>
         </li>
       </div>
       <Routes>

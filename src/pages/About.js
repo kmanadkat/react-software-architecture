@@ -1,6 +1,6 @@
 import React from "react";
-import { CounterContext } from "../Components/CounterContext";
-import { CounterProvider } from "../Components/CounterProvider";
+import { CounterContext } from "../ForContext/CounterContext";
+import { CounterProvider } from "../ForContext/CounterProvider";
 
 const CounterButton = () => {
   const { count, increment, decrement } = React.useContext(CounterContext);

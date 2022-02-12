@@ -1,29 +1,66 @@
 import React from "react";
+import { RecoilRoot, useRecoilState, useRecoilValue } from "recoil";
+import { countState } from "../ForRecoil/countState";
+import { deltaState } from "../ForRecoil/deltaState";
+
+const DisplayCount = () => {
+  const count = useRecoilValue(countState);
+  return <p className="counter">{count}</p>;
+};
+
+const CounterButton = () => {
+  const [_, setCount] = useRecoilState(countState);
+  const delta = useRecoilValue(deltaState);
+
+  const updateHandler = (isIncrement) => {
+    if (delta !== "") {
+      if (isIncrement) {
+        setCount((data) => (data += delta));
+      } else {
+        setCount((data) => (data -= delta));
+      }
+    }
+  };
+
+  return (
+    <>
+      <DisplayCount />
+      <button onClick={(_) => updateHandler(true)}>Increase</button>
+      <button onClick={(_) => updateHandler(false)}>Decrease</button>
+    </>
+  );
+};
+
+const CounterDelta = () => {
+  const [delta, setDelta] = useRecoilState(deltaState);
+
+  const updateDeltaHandler = (event) => {
+    if (event.target.value === "") {
+      setDelta("");
+    } else {
+      setDelta(parseInt(event.target.value));
+    }
+  };
+
+  return (
+    <input
+      type="number"
+      placeholder="Delta value.."
+      value={delta}
+      onChange={updateDeltaHandler}
+    />
+  );
+};
 
 const Articles = () => {
   return (
-    <section className="wrapper">
-      <h2>Articles</h2>
-      <p>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nostrum minus
-        tempora eos illum! Eligendi tempore in veritatis. Vel, nam voluptate.
-        Fugit dolore error facere suscipit odio nobis minus, ad nulla velit esse
-        itaque doloremque soluta vel. Tenetur saepe dicta, sint rerum soluta
-        consectetur. Amet ipsa facere architecto autem expedita aspernatur.
-      </p>
-      <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam sint a
-        asperiores! Nesciunt voluptate soluta doloribus libero! At unde eveniet
-        quae sunt dicta nam! Inventore minus pariatur at quam expedita.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit
-        aspernatur fugit minima aliquam iusto omnis molestias ex animi tempore
-        cum quis, saepe consequuntur doloribus neque aperiam placeat adipisci at
-        nam et sed minus! Nobis pariatur iure exercitationem saepe dolore
-        incidunt?
-      </p>
-    </section>
+    <RecoilRoot>
+      <section className="wrapper home">
+        <h2>State Management With Recoil</h2>
+        <CounterDelta />
+        <CounterButton />
+      </section>
+    </RecoilRoot>
   );
 };
 
